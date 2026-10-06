@@ -1,0 +1,20 @@
+<mvc:View controllerName="com.example.boilerplate.controller.Home" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page title="{i18n>appTitle}">
+    <content>
+      <VBox class="sapUiResponsiveMargin" renderType="Bare">
+        <Title text="{i18n>welcome}" titleStyle="H1" class="sapUiSmallMarginBottom" />
+        <Text text="{i18n>intro}" class="sapUiSmallMarginBottom" />
+        <ObjectStatus title="{i18n>runtime}" text="{environment>/runtime}" state="Success" class="sapUiSmallMarginBottom" />
+        <Panel headerText="{i18n>starterTitle}" class="sapUiSmallMarginTop">
+          <VBox>
+            <Text text="{i18n>starterText}" class="sapUiSmallMarginBottom" />
+            <HBox wrap="Wrap">
+              <Button text="{i18n>testAction}" type="Emphasized" press=".onTest" class="sapUiTinyMarginEnd" />
+              <Button text="{i18n>about}" press=".onAbout" />
+            </HBox>
+          </VBox>
+        </Panel>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

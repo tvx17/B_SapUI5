@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "outDir": "build",
+    "types": ["node"],
+    "sourceMap": true
+  },
+  "include": ["electron/**/*.cts", "scripts/**/*.cts", "tests/**/*.cts", "types/desktop.d.ts"]
+}

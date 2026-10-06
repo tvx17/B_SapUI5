@@ -1,0 +1,8 @@
+node_modules/
+dist/
+build/
+release/
+.ui5/
+*.log
+.env
+.DS_Store

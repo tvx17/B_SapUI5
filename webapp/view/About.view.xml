@@ -1,0 +1,10 @@
+<mvc:View controllerName="com.example.boilerplate.controller.About" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+  <Page title="{i18n>about}" showNavButton="true" navButtonPress=".onBack">
+    <VBox class="sapUiResponsiveMargin">
+      <Title text="{i18n>appTitle}" class="sapUiSmallMarginBottom" />
+      <Text text="{i18n>appDescription}" class="sapUiSmallMarginBottom" />
+      <ObjectStatus title="{i18n>runtime}" text="{environment>/runtime}" />
+      <ObjectStatus title="{i18n>platform}" text="{environment>/platform}" />
+    </VBox>
+  </Page>
+</mvc:View>

@@ -1,0 +1,58 @@
+{
+  "name": "sapui5-electron-boilerplate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wiederverwendbare SAPUI5-Anwendung für Browser und Electron",
+  "author": "",
+  "license": "UNLICENSED",
+  "main": "build/electron/main.cjs",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "start": "npm run build:node && ui5 serve --port 8080",
+    "build": "npm run typecheck && npm run build:node && ui5 build --all --clean-dest --include-task generateVersionInfo",
+    "preview": "npm run build:node && node build/scripts/preview.cjs",
+    "desktop": "npm run build && electron .",
+    "desktop:start": "electron .",
+    "desktop:dev": "npm run build:node && electron . --dev",
+    "test:reload": "npm run build:node && electron build/tests/live-reload.cjs",
+    "package": "npm run build && electron-builder --dir",
+    "dist:win": "npm run build && electron-builder --win portable",
+    "test": "npm run build:node && node --test build/tests/*.test.cjs",
+    "test:desktop": "npm run build && electron . --smoke-test",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "build:node": "tsc -p tsconfig.node.json"
+  },
+  "devDependencies": {
+    "@sapui5/types": "1.152.0",
+    "@types/node": "24.19.0",
+    "@ui5/cli": "4.0.69",
+    "electron": "44.4.5",
+    "electron-builder": "26.15.3",
+    "typescript": "7.0.2",
+    "ui5-middleware-livereload": "3.4.0",
+    "ui5-tooling-transpile": "3.13.1"
+  },
+  "build": {
+    "appId": "com.example.ui5boilerplate",
+    "productName": "UI5 Boilerplate",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "build/electron/**/*.cjs",
+      "package.json"
+    ],
+    "win": {
+      "target": "portable"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
